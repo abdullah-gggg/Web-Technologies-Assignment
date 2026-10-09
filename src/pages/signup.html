@@ -10,150 +10,161 @@
 <body class="bg-slate-50 text-slate-800 antialiased flex flex-col min-h-screen">
 
     <!-- COMPONENT 1: Top Welcome Ribbon -->
-    <div class="bg-indigo-600 text-white text-xs py-2 px-4 text-center font-medium">
-        🎓 Student Sign Up is 100% free with unlimited semester tracking.
-    </div>
+    <aside class="bg-indigo-600 text-white text-xs py-2 px-4 text-center font-medium">
+        <span aria-hidden="true">🎓</span> Student Sign Up is 100% free with unlimited semester tracking.
+    </aside>
 
-    <!-- COMPONENT 2: Navbar -->
-    <nav class="bg-white border-b border-slate-200 sticky top-0 z-50">
-        <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-            <a href="../../index.html" class="flex items-center gap-2 text-2xl font-black text-indigo-600 tracking-tight">
-                <span class="p-2 bg-indigo-50 rounded-xl text-indigo-600 text-xl">📚</span>
-                <span>StudyHub</span>
-            </a>
-            <div class="hidden md:flex items-center gap-8 font-medium text-sm">
-                <a href="../../index.html" class="text-slate-600 hover:text-indigo-600 transition">Home</a>
-                <a href="about.html" class="text-slate-600 hover:text-indigo-600 transition">About</a>
-                <a href="contact.html" class="text-slate-600 hover:text-indigo-600 transition">Contact</a>
-                <a href="signin.html" class="text-slate-600 hover:text-indigo-600 transition">Sign In</a>
-                <a href="signup.html" class="text-indigo-600 font-semibold border-b-2 border-indigo-600 pb-1">Sign Up</a>
+    <!-- COMPONENT 2: Header with Navbar -->
+    <header class="sticky top-0 z-50">
+        <nav aria-label="Main navigation" class="bg-white border-b border-slate-200">
+            <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+                <a href="../../index.html" class="flex items-center gap-2 text-2xl font-black text-indigo-600 tracking-tight">
+                    <span aria-hidden="true" class="p-2 bg-indigo-50 rounded-xl text-indigo-600 text-xl">📚</span>
+                    <span>StudyHub</span>
+                </a>
+                <ul class="hidden md:flex items-center gap-8 font-medium text-sm">
+                    <li><a href="../../index.html" class="text-slate-600 hover:text-indigo-600 transition">Home</a></li>
+                    <li><a href="about.html" class="text-slate-600 hover:text-indigo-600 transition">About</a></li>
+                    <li><a href="contact.html" class="text-slate-600 hover:text-indigo-600 transition">Contact</a></li>
+                    <li><a href="signin.html" class="text-slate-600 hover:text-indigo-600 transition">Sign In</a></li>
+                    <li><a href="signup.html" aria-current="page" class="text-indigo-600 font-semibold border-b-2 border-indigo-600 pb-1">Sign Up</a></li>
+                </ul>
+                <button type="button" aria-label="Open menu" class="md:hidden p-2 text-slate-600">☰</button>
             </div>
-            <button class="md:hidden p-2 text-slate-600">☰</button>
-        </div>
-    </nav>
+        </nav>
+    </header>
 
-    <!-- COMPONENT 3: Breadcrumb -->
-    <div class="max-w-lg mx-auto w-full px-6 pt-6">
-        <ol class="inline-flex items-center space-x-2 text-xs text-slate-500">
-            <li><a href="../../index.html" class="hover:text-indigo-600">Home</a></li>
-            <li><span>/</span></li>
-            <li class="text-indigo-600 font-semibold">Sign Up</li>
-        </ol>
-    </div>
+    <main class="flex-1 flex flex-col">
 
-    <!-- Main Registration Section -->
-    <main class="flex-1 flex items-center justify-center px-6 py-10">
-        <div class="w-full max-w-lg">
+        <!-- COMPONENT 3: Breadcrumb -->
+        <nav aria-label="Breadcrumb" class="max-w-lg mx-auto w-full px-6 pt-6">
+            <ol class="inline-flex items-center space-x-2 text-xs text-slate-500">
+                <li><a href="../../index.html" class="hover:text-indigo-600">Home</a></li>
+                <li aria-hidden="true"><span>/</span></li>
+                <li aria-current="page" class="text-indigo-600 font-semibold">Sign Up</li>
+            </ol>
+        </nav>
 
-            <!-- COMPONENT 4: Plan Tier Card (Free Student Tier) -->
-            <div class="mb-6 p-4 bg-indigo-50 border border-indigo-200 rounded-2xl flex items-center justify-between">
-                <div class="flex items-center gap-3">
-                    <span class="text-2xl">🎓</span>
-                    <div>
-                        <p class="text-xs font-bold uppercase text-indigo-700">Account Type</p>
-                        <p class="text-sm font-extrabold text-slate-900">Standard Student Free Plan</p>
-                    </div>
-                </div>
-                <span class="bg-indigo-600 text-white text-xs font-bold px-3 py-1 rounded-full">Active</span>
-            </div>
+        <!-- Main Registration Section -->
+        <section aria-labelledby="signup-title" class="flex-1 flex items-center justify-center px-6 py-10">
+            <div class="w-full max-w-lg">
 
-            <!-- COMPONENT 5: Registration Card -->
-            <div class="bg-white border border-slate-200 rounded-3xl shadow-xl p-8 sm:p-10">
-                <div class="text-center mb-6">
-                    <h1 class="text-2xl font-black text-slate-900 tracking-tight">Create Student Account</h1>
-                    <p class="text-xs text-slate-500 mt-1">Fill in the fields below to start your academic profile.</p>
-                </div>
-
-                <form action="#" method="POST" class="space-y-4">
-                    <div>
-                        <label for="reg-name" class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1">Full Name *</label>
-                        <input type="text" id="reg-name" required placeholder="Muhammad Hamza" class="w-full border border-slate-300 rounded-xl px-4 py-2.5 text-sm focus:ring-2 focus:ring-indigo-500 focus:outline-none transition">
-                    </div>
-
-                    <div>
-                        <label for="reg-email" class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1">University / Personal Email *</label>
-                        <input type="email" id="reg-email" required placeholder="student@example.com" class="w-full border border-slate-300 rounded-xl px-4 py-2.5 text-sm focus:ring-2 focus:ring-indigo-500 focus:outline-none transition">
-                    </div>
-
-                    <!-- COMPONENT 6: Department / Semester Selector -->
-                    <div class="grid grid-cols-2 gap-4">
+                <!-- COMPONENT 4: Plan Tier Card -->
+                <aside class="mb-6 p-4 bg-indigo-50 border border-indigo-200 rounded-2xl flex items-center justify-between">
+                    <div class="flex items-center gap-3">
+                        <span aria-hidden="true" class="text-2xl">🎓</span>
                         <div>
-                            <label for="reg-sem" class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1">Semester</label>
-                            <select id="reg-sem" class="w-full border border-slate-300 rounded-xl px-3 py-2.5 text-sm bg-white focus:outline-none">
-                                <option>Semester 1</option>
-                                <option>Semester 2</option>
-                                <option selected>Semester 3</option>
-                                <option>Semester 4+</option>
-                            </select>
-                        </div>
-                        <div>
-                            <label for="reg-dept" class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1">Department</label>
-                            <select id="reg-dept" class="w-full border border-slate-300 rounded-xl px-3 py-2.5 text-sm bg-white focus:outline-none">
-                                <option selected>Computer Science</option>
-                                <option>Software Eng</option>
-                                <option>Data Science</option>
-                            </select>
+                            <p class="text-xs font-bold uppercase text-indigo-700">Account Type</p>
+                            <p class="text-sm font-extrabold text-slate-900">Standard Student Free Plan</p>
                         </div>
                     </div>
+                    <span class="bg-indigo-600 text-white text-xs font-bold px-3 py-1 rounded-full">Active</span>
+                </aside>
 
-                    <div class="grid sm:grid-cols-2 gap-4">
-                        <div>
-                            <label for="reg-pass" class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1">Password *</label>
-                            <input type="password" id="reg-pass" minlength="6" required placeholder="Min 6 characters" class="w-full border border-slate-300 rounded-xl px-4 py-2.5 text-sm focus:ring-2 focus:ring-indigo-500 focus:outline-none transition">
-                        </div>
-                        <div>
-                            <label for="reg-confirm" class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1">Confirm Password *</label>
-                            <input type="password" id="reg-confirm" minlength="6" required placeholder="Repeat password" class="w-full border border-slate-300 rounded-xl px-4 py-2.5 text-sm focus:ring-2 focus:ring-indigo-500 focus:outline-none transition">
-                        </div>
-                    </div>
+                <!-- COMPONENT 5: Registration Card -->
+                <article class="bg-white border border-slate-200 rounded-3xl shadow-xl p-8 sm:p-10">
+                    <header class="text-center mb-6">
+                        <h1 id="signup-title" class="text-2xl font-black text-slate-900 tracking-tight">Create Student Account</h1>
+                        <p class="text-xs text-slate-500 mt-1">Fill in the fields below to start your academic profile.</p>
+                    </header>
 
-                    <!-- COMPONENT 7: Password Strength Meter / Badge -->
-                    <div class="flex items-center gap-2 pt-1">
-                        <div class="h-1 flex-1 bg-emerald-500 rounded"></div>
-                        <div class="h-1 flex-1 bg-emerald-500 rounded"></div>
-                        <div class="h-1 flex-1 bg-emerald-500 rounded"></div>
-                        <div class="h-1 flex-1 bg-slate-200 rounded"></div>
-                        <span class="text-[10px] text-emerald-600 font-bold uppercase ml-1">Good</span>
-                    </div>
+                    <form action="#" method="POST">
+                        <fieldset class="space-y-4">
+                            <legend class="sr-only">Student registration details</legend>
 
-                    <!-- COMPONENT 8: Terms & Conditions Checkbox -->
-                    <div class="flex items-start gap-2 pt-2">
-                        <input type="checkbox" id="terms" required class="w-4 h-4 mt-0.5 rounded text-indigo-600 focus:ring-indigo-500">
-                        <label for="terms" class="text-xs text-slate-600">
-                            I agree to the <a href="#" class="text-indigo-600 underline">Terms of Use</a> and acknowledge the privacy policy.
-                        </label>
-                    </div>
+                            <div>
+                                <label for="reg-name" class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1">Full Name *</label>
+                                <input type="text" id="reg-name" name="name" required placeholder="Muhammad Hamza" class="w-full border border-slate-300 rounded-xl px-4 py-2.5 text-sm focus:ring-2 focus:ring-indigo-500 focus:outline-none transition">
+                            </div>
 
-                    <!-- Submit Button -->
-                    <button type="submit" class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3.5 rounded-xl shadow-md transition text-sm">
-                        Create Free Account →
-                    </button>
-                </form>
+                            <div>
+                                <label for="reg-email" class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1">University / Personal Email *</label>
+                                <input type="email" id="reg-email" name="email" required placeholder="student@example.com" class="w-full border border-slate-300 rounded-xl px-4 py-2.5 text-sm focus:ring-2 focus:ring-indigo-500 focus:outline-none transition">
+                            </div>
 
-                <p class="text-center text-xs text-slate-600 mt-6">
-                    Already registered? <a href="signin.html" class="text-indigo-600 font-bold hover:underline">Sign In here</a>
-                </p>
+                            <!-- COMPONENT 6: Department / Semester Selector -->
+                            <div class="grid grid-cols-2 gap-4">
+                                <div>
+                                    <label for="reg-sem" class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1">Semester</label>
+                                    <select id="reg-sem" name="semester" class="w-full border border-slate-300 rounded-xl px-3 py-2.5 text-sm bg-white focus:outline-none">
+                                        <option>Semester 1</option>
+                                        <option>Semester 2</option>
+                                        <option selected>Semester 3</option>
+                                        <option>Semester 4+</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label for="reg-dept" class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1">Department</label>
+                                    <select id="reg-dept" name="department" class="w-full border border-slate-300 rounded-xl px-3 py-2.5 text-sm bg-white focus:outline-none">
+                                        <option selected>Computer Science</option>
+                                        <option>Software Eng</option>
+                                        <option>Data Science</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="grid sm:grid-cols-2 gap-4">
+                                <div>
+                                    <label for="reg-pass" class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1">Password *</label>
+                                    <input type="password" id="reg-pass" name="password" minlength="6" required placeholder="Min 6 characters" class="w-full border border-slate-300 rounded-xl px-4 py-2.5 text-sm focus:ring-2 focus:ring-indigo-500 focus:outline-none transition">
+                                </div>
+                                <div>
+                                    <label for="reg-confirm" class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1">Confirm Password *</label>
+                                    <input type="password" id="reg-confirm" name="confirm_password" minlength="6" required placeholder="Repeat password" class="w-full border border-slate-300 rounded-xl px-4 py-2.5 text-sm focus:ring-2 focus:ring-indigo-500 focus:outline-none transition">
+                                </div>
+                            </div>
+
+                            <!-- COMPONENT 7: Password Strength Meter -->
+                            <div class="flex items-center gap-2 pt-1" role="img" aria-label="Password strength: good">
+                                <div class="h-1 flex-1 bg-emerald-500 rounded"></div>
+                                <div class="h-1 flex-1 bg-emerald-500 rounded"></div>
+                                <div class="h-1 flex-1 bg-emerald-500 rounded"></div>
+                                <div class="h-1 flex-1 bg-slate-200 rounded"></div>
+                                <span class="text-[10px] text-emerald-600 font-bold uppercase ml-1">Good</span>
+                            </div>
+
+                            <!-- COMPONENT 8: Terms & Conditions Checkbox -->
+                            <div class="flex items-start gap-2 pt-2">
+                                <input type="checkbox" id="terms" name="terms" required class="w-4 h-4 mt-0.5 rounded text-indigo-600 focus:ring-indigo-500">
+                                <label for="terms" class="text-xs text-slate-600">
+                                    I agree to the <a href="#" class="text-indigo-600 underline">Terms of Use</a> and acknowledge the privacy policy.
+                                </label>
+                            </div>
+
+                            <button type="submit" class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3.5 rounded-xl shadow-md transition text-sm">
+                                Create Free Account →
+                            </button>
+                        </fieldset>
+                    </form>
+
+                    <footer class="text-center text-xs text-slate-600 mt-6">
+                        <p>Already registered? <a href="signin.html" class="text-indigo-600 font-bold hover:underline">Sign In here</a></p>
+                    </footer>
+                </article>
+
+                <!-- COMPONENT 9: Trust Badges -->
+                <ul class="flex justify-center items-center gap-4 mt-6 text-xs text-slate-400">
+                    <li><span aria-hidden="true">✓</span> No credit card required</li>
+                    <li aria-hidden="true">•</li>
+                    <li><span aria-hidden="true">✓</span> Instant activation</li>
+                </ul>
+
             </div>
+        </section>
 
-            <!-- COMPONENT 9: Trust Badge Pill -->
-            <div class="flex justify-center items-center gap-4 mt-6 text-xs text-slate-400">
-                <span>✓ No credit card required</span>
-                <span>•</span>
-                <span>✓ Instant activation</span>
-            </div>
-
-        </div>
     </main>
 
     <!-- COMPONENT 10: Footer -->
     <footer class="bg-white border-t border-slate-200 mt-auto">
         <div class="max-w-7xl mx-auto px-6 py-6 flex flex-col sm:flex-row justify-between items-center text-xs text-slate-400 gap-3">
-            <p>© 2026 StudyHub Platform.</p>
-            <div class="flex gap-4">
-                <a href="../../index.html" class="hover:text-indigo-600">Home</a>
-                <a href="about.html" class="hover:text-indigo-600">About</a>
-                <a href="contact.html" class="hover:text-indigo-600">Contact</a>
-            </div>
+            <p><small>© 2026 StudyHub Platform.</small></p>
+            <nav aria-label="Footer navigation">
+                <ul class="flex gap-4">
+                    <li><a href="../../index.html" class="hover:text-indigo-600">Home</a></li>
+                    <li><a href="about.html" class="hover:text-indigo-600">About</a></li>
+                    <li><a href="contact.html" class="hover:text-indigo-600">Contact</a></li>
+                </ul>
+            </nav>
         </div>
     </footer>
 

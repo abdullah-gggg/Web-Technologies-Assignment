@@ -10,116 +10,128 @@
 <body class="bg-slate-50 text-slate-800 antialiased flex flex-col min-h-screen">
 
     <!-- COMPONENT 1: Top Notification -->
-    <div class="bg-indigo-600 text-white text-xs py-2 px-4 text-center font-medium">
-        🔒 Authorized Student Portal Access
-    </div>
+    <aside class="bg-indigo-600 text-white text-xs py-2 px-4 text-center font-medium">
+        <span aria-hidden="true">🔒</span> Authorized Student Portal Access
+    </aside>
 
-    <!-- COMPONENT 2: Navbar -->
-    <nav class="bg-white border-b border-slate-200 sticky top-0 z-50">
-        <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-            <a href="../../index.html" class="flex items-center gap-2 text-2xl font-black text-indigo-600 tracking-tight">
-                <span class="p-2 bg-indigo-50 rounded-xl text-indigo-600 text-xl">📚</span>
-                <span>StudyHub</span>
-            </a>
-            <div class="hidden md:flex items-center gap-8 font-medium text-sm">
-                <a href="../../index.html" class="text-slate-600 hover:text-indigo-600 transition">Home</a>
-                <a href="about.html" class="text-slate-600 hover:text-indigo-600 transition">About</a>
-                <a href="contact.html" class="text-slate-600 hover:text-indigo-600 transition">Contact</a>
-                <a href="signin.html" class="text-indigo-600 font-semibold border-b-2 border-indigo-600 pb-1">Sign In</a>
-                <a href="signup.html" class="bg-indigo-600 text-white px-5 py-2.5 rounded-lg hover:bg-indigo-700 transition shadow-sm font-semibold">Sign Up</a>
+    <!-- COMPONENT 2: Header with Navbar -->
+    <header class="sticky top-0 z-50">
+        <nav aria-label="Main navigation" class="bg-white border-b border-slate-200">
+            <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+                <a href="../../index.html" class="flex items-center gap-2 text-2xl font-black text-indigo-600 tracking-tight">
+                    <span aria-hidden="true" class="p-2 bg-indigo-50 rounded-xl text-indigo-600 text-xl">📚</span>
+                    <span>StudyHub</span>
+                </a>
+                <ul class="hidden md:flex items-center gap-8 font-medium text-sm">
+                    <li><a href="../../index.html" class="text-slate-600 hover:text-indigo-600 transition">Home</a></li>
+                    <li><a href="about.html" class="text-slate-600 hover:text-indigo-600 transition">About</a></li>
+                    <li><a href="contact.html" class="text-slate-600 hover:text-indigo-600 transition">Contact</a></li>
+                    <li><a href="signin.html" aria-current="page" class="text-indigo-600 font-semibold border-b-2 border-indigo-600 pb-1">Sign In</a></li>
+                    <li><a href="signup.html" class="bg-indigo-600 text-white px-5 py-2.5 rounded-lg hover:bg-indigo-700 transition shadow-sm font-semibold">Sign Up</a></li>
+                </ul>
+                <button type="button" aria-label="Open menu" class="md:hidden p-2 text-slate-600">☰</button>
             </div>
-            <button class="md:hidden p-2 text-slate-600">☰</button>
-        </div>
-    </nav>
+        </nav>
+    </header>
 
-    <!-- COMPONENT 3: Breadcrumb -->
-    <div class="max-w-md mx-auto w-full px-6 pt-6">
-        <ol class="inline-flex items-center space-x-2 text-xs text-slate-500">
-            <li><a href="../../index.html" class="hover:text-indigo-600">Home</a></li>
-            <li><span>/</span></li>
-            <li class="text-indigo-600 font-semibold">Sign In</li>
-        </ol>
-    </div>
+    <main class="flex-1 flex flex-col">
 
-    <!-- Main Sign In Container -->
-    <main class="flex-1 flex items-center justify-center px-6 py-10">
-        <div class="w-full max-w-md">
+        <!-- COMPONENT 3: Breadcrumb -->
+        <nav aria-label="Breadcrumb" class="max-w-md mx-auto w-full px-6 pt-6">
+            <ol class="inline-flex items-center space-x-2 text-xs text-slate-500">
+                <li><a href="../../index.html" class="hover:text-indigo-600">Home</a></li>
+                <li aria-hidden="true"><span>/</span></li>
+                <li aria-current="page" class="text-indigo-600 font-semibold">Sign In</li>
+            </ol>
+        </nav>
 
-            <!-- COMPONENT 4: Security Status Alert -->
-            <div class="mb-6 p-3 bg-indigo-50 border border-indigo-100 rounded-xl flex items-center gap-2 text-xs text-indigo-800">
-                <span>🛡️</span>
-                <span>Encrypted 256-bit session. Enter credentials to load dashboard.</span>
-            </div>
+        <!-- Main Sign In Container -->
+        <section aria-labelledby="signin-title" class="flex-1 flex items-center justify-center px-6 py-10">
+            <div class="w-full max-w-md">
 
-            <!-- COMPONENT 5: Auth Card with Social Login Buttons -->
-            <div class="bg-white border border-slate-200 rounded-3xl shadow-xl p-8 sm:p-10">
-                <div class="text-center mb-8">
-                    <h1 class="text-2xl font-black text-slate-900 tracking-tight">Student Portal Sign In</h1>
-                    <p class="text-xs text-slate-500 mt-1">Access your courses, notes, and task progress.</p>
-                </div>
+                <!-- COMPONENT 4: Security Status Alert -->
+                <aside role="status" class="mb-6 p-3 bg-indigo-50 border border-indigo-100 rounded-xl flex items-center gap-2 text-xs text-indigo-800">
+                    <span aria-hidden="true">🛡️</span>
+                    <span>Encrypted 256-bit session. Enter credentials to load dashboard.</span>
+                </aside>
 
-                <!-- COMPONENT 6: OAuth Button Component -->
-                <button type="button" class="w-full flex items-center justify-center gap-3 border border-slate-300 py-3 rounded-xl text-xs font-semibold text-slate-700 hover:bg-slate-50 transition mb-6">
-                    <svg class="w-4 h-4" viewBox="0 0 24 24"><path fill="#4285F4" d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v4.51h6.6c-.29 1.52-1.14 2.8-2.4 3.65v3h3.88c2.27-2.09 3.66-5.17 3.66-9.09z"/><path fill="#34A853" d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.88-3c-1.08.72-2.45 1.16-4.05 1.16-3.12 0-5.77-2.1-6.72-4.93H1.28v3.1C3.27 21.36 7.35 24 12 24z"/><path fill="#FBBC05" d="M5.28 14.32c-.25-.72-.38-1.49-.38-2.32s.14-1.6.38-2.32V6.58H1.28C.46 8.21 0 10.05 0 12s.46 3.79 1.28 5.42l4-3.1z"/><path fill="#EA4335" d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.35 0 3.27 2.64 1.28 6.58l4 3.1c.95-2.83 3.6-4.93 6.72-4.93z"/></svg>
-                    <span>Continue with University Google ID</span>
-                </button>
+                <!-- COMPONENT 5: Auth Card -->
+                <article class="bg-white border border-slate-200 rounded-3xl shadow-xl p-8 sm:p-10">
+                    <header class="text-center mb-8">
+                        <h1 id="signin-title" class="text-2xl font-black text-slate-900 tracking-tight">Student Portal Sign In</h1>
+                        <p class="text-xs text-slate-500 mt-1">Access your courses, notes, and task progress.</p>
+                    </header>
 
-                <!-- COMPONENT 7: Form Divider -->
-                <div class="relative flex py-2 items-center mb-6">
-                    <div class="flex-grow border-t border-slate-200"></div>
-                    <span class="flex-shrink mx-4 text-slate-400 text-xs uppercase font-medium">or continue with email</span>
-                    <div class="flex-grow border-t border-slate-200"></div>
-                </div>
-
-                <!-- Form -->
-                <form action="#" method="POST" class="space-y-4">
-                    <div>
-                        <label for="signin-email" class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1">Email Address</label>
-                        <input type="email" id="signin-email" required placeholder="name@university.edu" class="w-full border border-slate-300 rounded-xl px-4 py-2.5 text-sm focus:ring-2 focus:ring-indigo-500 focus:outline-none transition">
-                    </div>
-
-                    <div>
-                        <div class="flex justify-between items-center mb-1">
-                            <label for="signin-pass" class="block text-xs font-bold uppercase tracking-wider text-slate-700">Password</label>
-                            <a href="#" class="text-xs text-indigo-600 hover:underline">Forgot password?</a>
-                        </div>
-                        <input type="password" id="signin-pass" required placeholder="••••••••" class="w-full border border-slate-300 rounded-xl px-4 py-2.5 text-sm focus:ring-2 focus:ring-indigo-500 focus:outline-none transition">
-                    </div>
-
-                    <!-- COMPONENT 8: Remember Me Checkbox -->
-                    <div class="flex items-center gap-2 pt-1">
-                        <input type="checkbox" id="remember" class="w-4 h-4 rounded text-indigo-600 focus:ring-indigo-500">
-                        <label for="remember" class="text-xs text-slate-600">Keep me logged in for 30 days</label>
-                    </div>
-
-                    <button type="submit" class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3 rounded-xl shadow-md transition text-sm">
-                        Sign In to StudyHub
+                    <!-- COMPONENT 6: OAuth Button -->
+                    <button type="button" class="w-full flex items-center justify-center gap-3 border border-slate-300 py-3 rounded-xl text-xs font-semibold text-slate-700 hover:bg-slate-50 transition mb-6">
+                        <svg class="w-4 h-4" viewBox="0 0 24 24" aria-hidden="true"><path fill="#4285F4" d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v4.51h6.6c-.29 1.52-1.14 2.8-2.4 3.65v3h3.88c2.27-2.09 3.66-5.17 3.66-9.09z"/><path fill="#34A853" d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.88-3c-1.08.72-2.45 1.16-4.05 1.16-3.12 0-5.77-2.1-6.72-4.93H1.28v3.1C3.27 21.36 7.35 24 12 24z"/><path fill="#FBBC05" d="M5.28 14.32c-.25-.72-.38-1.49-.38-2.32s.14-1.6.38-2.32V6.58H1.28C.46 8.21 0 10.05 0 12s.46 3.79 1.28 5.42l4-3.1z"/><path fill="#EA4335" d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.35 0 3.27 2.64 1.28 6.58l4 3.1c.95-2.83 3.6-4.93 6.72-4.93z"/></svg>
+                        <span>Continue with University Google ID</span>
                     </button>
-                </form>
 
-                <p class="text-center text-xs text-slate-600 mt-6">
-                    Don't have an account? <a href="signup.html" class="text-indigo-600 font-bold hover:underline">Create an account</a>
-                </p>
-            </div>
+                    <!-- COMPONENT 7: Form Divider -->
+                    <div class="relative flex py-2 items-center mb-6" role="separator">
+                        <div class="flex-grow border-t border-slate-200"></div>
+                        <span class="flex-shrink mx-4 text-slate-400 text-xs uppercase font-medium">or continue with email</span>
+                        <div class="flex-grow border-t border-slate-200"></div>
+                    </div>
 
-            <!-- COMPONENT 9: Help & Security Badge Pill -->
-            <div class="text-center mt-6">
-                <span class="inline-flex items-center gap-1.5 text-xs text-slate-500 bg-white border border-slate-200 px-3 py-1 rounded-full">
-                    <span>🔒</span> SSL Secure Academic Transmission
-                </span>
+                    <!-- Form -->
+                    <form action="#" method="POST">
+                        <fieldset class="space-y-4">
+                            <legend class="sr-only">Sign in with email and password</legend>
+
+                            <div>
+                                <label for="signin-email" class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1">Email Address</label>
+                                <input type="email" id="signin-email" name="email" required placeholder="name@university.edu" class="w-full border border-slate-300 rounded-xl px-4 py-2.5 text-sm focus:ring-2 focus:ring-indigo-500 focus:outline-none transition">
+                            </div>
+
+                            <div>
+                                <div class="flex justify-between items-center mb-1">
+                                    <label for="signin-pass" class="block text-xs font-bold uppercase tracking-wider text-slate-700">Password</label>
+                                    <a href="#" class="text-xs text-indigo-600 hover:underline">Forgot password?</a>
+                                </div>
+                                <input type="password" id="signin-pass" name="password" required placeholder="••••••••" class="w-full border border-slate-300 rounded-xl px-4 py-2.5 text-sm focus:ring-2 focus:ring-indigo-500 focus:outline-none transition">
+                            </div>
+
+                            <!-- COMPONENT 8: Remember Me Checkbox -->
+                            <div class="flex items-center gap-2 pt-1">
+                                <input type="checkbox" id="remember" name="remember" class="w-4 h-4 rounded text-indigo-600 focus:ring-indigo-500">
+                                <label for="remember" class="text-xs text-slate-600">Keep me logged in for 30 days</label>
+                            </div>
+
+                            <button type="submit" class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3 rounded-xl shadow-md transition text-sm">
+                                Sign In to StudyHub
+                            </button>
+                        </fieldset>
+                    </form>
+
+                    <footer class="text-center text-xs text-slate-600 mt-6">
+                        <p>Don't have an account? <a href="signup.html" class="text-indigo-600 font-bold hover:underline">Create an account</a></p>
+                    </footer>
+                </article>
+
+                <!-- COMPONENT 9: Help & Security Badge Pill -->
+                <div class="text-center mt-6">
+                    <span class="inline-flex items-center gap-1.5 text-xs text-slate-500 bg-white border border-slate-200 px-3 py-1 rounded-full">
+                        <span aria-hidden="true">🔒</span> SSL Secure Academic Transmission
+                    </span>
+                </div>
             </div>
-        </div>
+        </section>
+
     </main>
 
     <!-- COMPONENT 10: Footer -->
     <footer class="bg-white border-t border-slate-200 mt-auto">
         <div class="max-w-7xl mx-auto px-6 py-6 flex flex-col sm:flex-row justify-between items-center text-xs text-slate-400 gap-3">
-            <p>© 2026 StudyHub Platform.</p>
-            <div class="flex gap-4">
-                <a href="../../index.html" class="hover:text-indigo-600">Home</a>
-                <a href="about.html" class="hover:text-indigo-600">About</a>
-                <a href="contact.html" class="hover:text-indigo-600">Contact</a>
-            </div>
+            <p><small>© 2026 StudyHub Platform.</small></p>
+            <nav aria-label="Footer navigation">
+                <ul class="flex gap-4">
+                    <li><a href="../../index.html" class="hover:text-indigo-600">Home</a></li>
+                    <li><a href="about.html" class="hover:text-indigo-600">About</a></li>
+                    <li><a href="contact.html" class="hover:text-indigo-600">Contact</a></li>
+                </ul>
+            </nav>
         </div>
     </footer>
 

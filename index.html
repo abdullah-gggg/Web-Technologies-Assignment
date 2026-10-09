@@ -11,186 +11,196 @@
 </head>
 <body class="bg-slate-50 text-slate-800 antialiased flex flex-col min-h-screen">
 
-    <!-- COMPONENT 1: Top Notification Banner / Alert -->
-    <div class="bg-indigo-900 text-indigo-100 text-xs sm:text-sm py-2 px-4 text-center font-medium flex items-center justify-center gap-2">
+    <!-- COMPONENT 1: Top Notification Banner (aside = supplementary info) -->
+    <aside class="bg-indigo-900 text-indigo-100 text-xs sm:text-sm py-2 px-4 text-center font-medium flex items-center justify-center gap-2">
         <span class="bg-indigo-500 text-white text-[10px] uppercase font-bold px-2 py-0.5 rounded-full">New</span>
         <span>Semester Study Planner 2.0 is live! Explore organized smart schedules today.</span>
-    </div>
+    </aside>
 
-    <!-- COMPONENT 2: Responsive Navbar with Dropdown & Badges -->
-    <nav class="bg-white border-b border-slate-200 sticky top-0 z-50 shadow-sm">
-        <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-            <a href="index.html" class="flex items-center gap-2 text-2xl font-black text-indigo-600 tracking-tight">
-                <span class="p-2 bg-indigo-50 rounded-xl text-indigo-600 text-xl">📚</span>
-                <span>StudyHub</span>
-            </a>
+    <!-- COMPONENT 2: Site Header with Main Navigation -->
+    <header class="sticky top-0 z-50">
+        <nav aria-label="Main navigation" class="bg-white border-b border-slate-200 shadow-sm">
+            <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+                <a href="index.html" class="flex items-center gap-2 text-2xl font-black text-indigo-600 tracking-tight">
+                    <span aria-hidden="true" class="p-2 bg-indigo-50 rounded-xl text-indigo-600 text-xl">📚</span>
+                    <span>StudyHub</span>
+                </a>
 
-            <div class="hidden md:flex items-center gap-8 font-medium text-sm">
-                <a href="index.html" class="text-indigo-600 font-semibold border-b-2 border-indigo-600 pb-1">Home</a>
-                <a href="src/pages/about.html" class="text-slate-600 hover:text-indigo-600 transition">About</a>
-                <a href="src/pages/contact.html" class="text-slate-600 hover:text-indigo-600 transition">Contact</a>
-                <a href="src/pages/signin.html" class="text-slate-600 hover:text-indigo-600 transition">Sign In</a>
-                <a href="src/pages/signup.html" class="bg-indigo-600 text-white px-5 py-2.5 rounded-lg hover:bg-indigo-700 transition shadow-sm font-semibold">Sign Up Free</a>
+                <ul class="hidden md:flex items-center gap-8 font-medium text-sm">
+                    <li><a href="index.html" aria-current="page" class="text-indigo-600 font-semibold border-b-2 border-indigo-600 pb-1">Home</a></li>
+                    <li><a href="src/pages/about.html" class="text-slate-600 hover:text-indigo-600 transition">About</a></li>
+                    <li><a href="src/pages/contact.html" class="text-slate-600 hover:text-indigo-600 transition">Contact</a></li>
+                    <li><a href="src/pages/signin.html" class="text-slate-600 hover:text-indigo-600 transition">Sign In</a></li>
+                    <li><a href="src/pages/signup.html" class="bg-indigo-600 text-white px-5 py-2.5 rounded-lg hover:bg-indigo-700 transition shadow-sm font-semibold">Sign Up Free</a></li>
+                </ul>
+
+                <button type="button" aria-label="Open menu" class="md:hidden p-2 text-slate-600 hover:bg-slate-100 rounded-lg">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                </button>
             </div>
-
-            <button class="md:hidden p-2 text-slate-600 hover:bg-slate-100 rounded-lg">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
-            </button>
-        </div>
-    </nav>
-
-    <!-- COMPONENT 3: Hero Section with Dual CTA & Hero Image -->
-    <header class="bg-gradient-to-br from-indigo-700 via-indigo-600 to-purple-800 text-white py-20 lg:py-28 relative overflow-hidden">
-        <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center">
-            <div>
-                <span class="inline-flex items-center gap-2 bg-white/10 border border-white/20 px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-wider text-indigo-100 mb-6">
-                    ⚡ Smart Academic System
-                </span>
-                <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight tracking-tight mb-6">
-                    Master Your Semester. <br><span class="text-indigo-200">Study With Focus.</span>
-                </h1>
-                <p class="text-lg text-indigo-100 leading-relaxed mb-8 max-w-xl">
-                    Organize your assignments, course notes, and study schedules in one distraction-free unified workspace built specifically for students.
-                </p>
-                <div class="flex flex-wrap gap-4">
-                    <a href="src/pages/signup.html" class="bg-white text-indigo-700 font-bold px-7 py-3.5 rounded-xl hover:bg-indigo-50 transition shadow-lg hover:shadow-indigo-500/20">Get Started Free →</a>
-                    <a href="src/pages/about.html" class="border border-white/30 hover:bg-white/10 font-medium px-6 py-3.5 rounded-xl transition">Explore Features</a>
-                </div>
-            </div>
-
-            <!-- COMPONENT 4: Hero Image (replaces Weekly Target Sprint card) -->
-            <div class="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-4 shadow-2xl">
-                <img src="src/assets/images/home.webp"
-                     alt="Study schedule and calendar planning"
-                     class="w-full h-auto rounded-xl object-cover shadow-lg">
-            </div>
-        </div>
+        </nav>
     </header>
 
-    <!-- COMPONENT 5: Stat Counter Grid -->
-    <section class="border-b border-slate-200 bg-white py-12">
-        <div class="max-w-7xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-            <div>
-                <p class="text-4xl font-extrabold text-indigo-600">12,000+</p>
-                <p class="text-sm text-slate-500 font-medium mt-1">Active Students</p>
-            </div>
-            <div>
-                <p class="text-4xl font-extrabold text-indigo-600">99.4%</p>
-                <p class="text-sm text-slate-500 font-medium mt-1">Assignment Completion</p>
-            </div>
-            <div>
-                <p class="text-4xl font-extrabold text-indigo-600">50+</p>
-                <p class="text-sm text-slate-500 font-medium mt-1">University Courses</p>
-            </div>
-            <div>
-                <p class="text-4xl font-extrabold text-indigo-600">4.9 / 5</p>
-                <p class="text-sm text-slate-500 font-medium mt-1">Peer Review Rating</p>
-            </div>
-        </div>
-    </section>
+    <main>
 
-    <!-- COMPONENT 6: 6-Card Feature Grid with Badges -->
-    <section class="py-20 max-w-7xl mx-auto px-6">
-        <div class="text-center max-w-2xl mx-auto mb-16">
-            <span class="text-indigo-600 text-xs font-bold uppercase tracking-wider bg-indigo-50 px-3 py-1 rounded-full">Core Modules</span>
-            <h2 class="text-3xl md:text-4xl font-extrabold mt-3 text-slate-900">Built to replace 10 disjointed study tools</h2>
-        </div>
+        <!-- COMPONENT 3: Hero Section with Dual CTA -->
+        <section aria-labelledby="hero-title" class="bg-gradient-to-br from-indigo-700 via-indigo-600 to-purple-800 text-white py-20 lg:py-28 relative overflow-hidden">
+            <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <span class="inline-flex items-center gap-2 bg-white/10 border border-white/20 px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-wider text-indigo-100 mb-6">
+                        <span aria-hidden="true">⚡</span> Smart Academic System
+                    </span>
+                    <h1 id="hero-title" class="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight tracking-tight mb-6">
+                        Master Your Semester. <br><span class="text-indigo-200">Study With Focus.</span>
+                    </h1>
+                    <p class="text-lg text-indigo-100 leading-relaxed mb-8 max-w-xl">
+                        Organize your assignments, course notes, and study schedules in one distraction-free unified workspace built specifically for students.
+                    </p>
+                    <div class="flex flex-wrap gap-4">
+                        <a href="src/pages/signup.html" class="bg-white text-indigo-700 font-bold px-7 py-3.5 rounded-xl hover:bg-indigo-50 transition shadow-lg hover:shadow-indigo-500/20">Get Started Free →</a>
+                        <a href="src/pages/about.html" class="border border-white/30 hover:bg-white/10 font-medium px-6 py-3.5 rounded-xl transition">Explore Features</a>
+                    </div>
+                </div>
 
-        <div class="grid md:grid-cols-3 gap-8">
-            <div class="bg-white border border-slate-200 rounded-2xl p-7 shadow-sm hover:shadow-md transition">
-                <div class="w-12 h-12 bg-indigo-50 text-indigo-600 rounded-xl flex items-center justify-center text-2xl mb-5">📅</div>
-                <h3 class="text-lg font-bold mb-2">Smart Timetable</h3>
-                <p class="text-sm text-slate-600 leading-relaxed">Dynamic weekly routines syncing lectures, lab exams, and study blocks automatically.</p>
+                <!-- COMPONENT 4: Hero Image -->
+                <figure class="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-4 shadow-2xl">
+                    <img src="src/assets/images/home.webp"
+                         alt="Study schedule and calendar planning"
+                         class="w-full h-auto rounded-xl object-cover shadow-lg">
+                    <figcaption class="sr-only">Planning a study schedule with a calendar</figcaption>
+                </figure>
             </div>
-            <div class="bg-white border border-slate-200 rounded-2xl p-7 shadow-sm hover:shadow-md transition">
-                <div class="w-12 h-12 bg-emerald-50 text-emerald-600 rounded-xl flex items-center justify-center text-2xl mb-5">✅</div>
-                <h3 class="text-lg font-bold mb-2">Deadline Watcher</h3>
-                <p class="text-sm text-slate-600 leading-relaxed">Never miss an assignment portal upload deadline with prioritized milestone alerts.</p>
-            </div>
-            <div class="bg-white border border-slate-200 rounded-2xl p-7 shadow-sm hover:shadow-md transition">
-                <div class="w-12 h-12 bg-purple-50 text-purple-600 rounded-xl flex items-center justify-center text-2xl mb-5">📊</div>
-                <h3 class="text-lg font-bold mb-2">GPA & Goal Tracker</h3>
-                <p class="text-sm text-slate-600 leading-relaxed">Evaluate internal assessment weights and semester GPA projections in real-time.</p>
-            </div>
-            <div class="bg-white border border-slate-200 rounded-2xl p-7 shadow-sm hover:shadow-md transition">
-                <div class="w-12 h-12 bg-blue-50 text-blue-600 rounded-xl flex items-center justify-center text-2xl mb-5">📝</div>
-                <h3 class="text-lg font-bold mb-2">Markdown Notes</h3>
-                <p class="text-sm text-slate-600 leading-relaxed">Fast note taking with full code snippet highlighting, formula blocks, and PDF exports.</p>
-            </div>
-            <div class="bg-white border border-slate-200 rounded-2xl p-7 shadow-sm hover:shadow-md transition">
-                <div class="w-12 h-12 bg-rose-50 text-rose-600 rounded-xl flex items-center justify-center text-2xl mb-5">🎯</div>
-                <h3 class="text-lg font-bold mb-2">Pomodoro Intervals</h3>
-                <p class="text-sm text-slate-600 leading-relaxed">Integrated focused study sprints designed to maximize retention and prevent burnout.</p>
-            </div>
-            <div class="bg-white border border-slate-200 rounded-2xl p-7 shadow-sm hover:shadow-md transition">
-                <div class="w-12 h-12 bg-amber-50 text-amber-600 rounded-xl flex items-center justify-center text-2xl mb-5">👥</div>
-                <h3 class="text-lg font-bold mb-2">Study Groups</h3>
-                <p class="text-sm text-slate-600 leading-relaxed">Collaborate with peers, share reference summaries, and sync exam preparation checklists.</p>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- COMPONENT 7: Academic Course Schedule Data Table -->
-    <section class="bg-white border-y border-slate-200 py-16">
-        <div class="max-w-6xl mx-auto px-6">
-            <h2 class="text-2xl font-bold mb-6 text-slate-900">Current Semester Sample Schedule</h2>
-            <div class="overflow-x-auto border border-slate-200 rounded-xl">
-                <table class="w-full text-left text-sm text-slate-600">
-                    <thead class="bg-slate-50 text-slate-700 font-semibold uppercase text-xs border-b border-slate-200">
-                        <tr>
-                            <th class="px-6 py-4">Course Name</th>
-                            <th class="px-6 py-4">Code</th>
-                            <th class="px-6 py-4">Credit Hours</th>
-                            <th class="px-6 py-4">Status</th>
-                        </tr>
-                    </thead>
-                    <tbody class="divide-y divide-slate-200">
-                        <tr class="hover:bg-slate-50">
-                            <td class="px-6 py-4 font-medium text-slate-900">Web Technologies</td>
-                            <td class="px-6 py-4 font-mono text-xs">CS-301</td>
-                            <td class="px-6 py-4">3 (2+1)</td>
-                            <td class="px-6 py-4"><span class="bg-green-100 text-green-700 px-2.5 py-1 rounded-full text-xs font-semibold">Enrolled</span></td>
-                        </tr>
-                        <tr class="hover:bg-slate-50">
-                            <td class="px-6 py-4 font-medium text-slate-900">Theory of Automata</td>
-                            <td class="px-6 py-4 font-mono text-xs">CS-304</td>
-                            <td class="px-6 py-4">3 (3+0)</td>
-                            <td class="px-6 py-4"><span class="bg-green-100 text-green-700 px-2.5 py-1 rounded-full text-xs font-semibold">Enrolled</span></td>
-                        </tr>
-                        <tr class="hover:bg-slate-50">
-                            <td class="px-6 py-4 font-medium text-slate-900">Advanced Database Systems</td>
-                            <td class="px-6 py-4 font-mono text-xs">CS-308</td>
-                            <td class="px-6 py-4">3 (2+1)</td>
-                            <td class="px-6 py-4"><span class="bg-indigo-100 text-indigo-700 px-2.5 py-1 rounded-full text-xs font-semibold">In Progress</span></td>
-                        </tr>
-                    </tbody>
-                </table>
+        <!-- COMPONENT 5: Stat Counter Grid -->
+        <section aria-label="Platform statistics" class="border-b border-slate-200 bg-white py-12">
+            <ul class="max-w-7xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                <li>
+                    <p class="text-4xl font-extrabold text-indigo-600">12,000+</p>
+                    <p class="text-sm text-slate-500 font-medium mt-1">Active Students</p>
+                </li>
+                <li>
+                    <p class="text-4xl font-extrabold text-indigo-600">99.4%</p>
+                    <p class="text-sm text-slate-500 font-medium mt-1">Assignment Completion</p>
+                </li>
+                <li>
+                    <p class="text-4xl font-extrabold text-indigo-600">50+</p>
+                    <p class="text-sm text-slate-500 font-medium mt-1">University Courses</p>
+                </li>
+                <li>
+                    <p class="text-4xl font-extrabold text-indigo-600">4.9 / 5</p>
+                    <p class="text-sm text-slate-500 font-medium mt-1">Peer Review Rating</p>
+                </li>
+            </ul>
+        </section>
+
+        <!-- COMPONENT 6: 6-Card Feature Grid -->
+        <section aria-labelledby="features-title" class="py-20 max-w-7xl mx-auto px-6">
+            <header class="text-center max-w-2xl mx-auto mb-16">
+                <span class="text-indigo-600 text-xs font-bold uppercase tracking-wider bg-indigo-50 px-3 py-1 rounded-full">Core Modules</span>
+                <h2 id="features-title" class="text-3xl md:text-4xl font-extrabold mt-3 text-slate-900">Built to replace 10 disjointed study tools</h2>
+            </header>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <article class="bg-white border border-slate-200 rounded-2xl p-7 shadow-sm hover:shadow-md transition">
+                    <div aria-hidden="true" class="w-12 h-12 bg-indigo-50 text-indigo-600 rounded-xl flex items-center justify-center text-2xl mb-5">📅</div>
+                    <h3 class="text-lg font-bold mb-2">Smart Timetable</h3>
+                    <p class="text-sm text-slate-600 leading-relaxed">Dynamic weekly routines syncing lectures, lab exams, and study blocks automatically.</p>
+                </article>
+                <article class="bg-white border border-slate-200 rounded-2xl p-7 shadow-sm hover:shadow-md transition">
+                    <div aria-hidden="true" class="w-12 h-12 bg-emerald-50 text-emerald-600 rounded-xl flex items-center justify-center text-2xl mb-5">✅</div>
+                    <h3 class="text-lg font-bold mb-2">Deadline Watcher</h3>
+                    <p class="text-sm text-slate-600 leading-relaxed">Never miss an assignment portal upload deadline with prioritized milestone alerts.</p>
+                </article>
+                <article class="bg-white border border-slate-200 rounded-2xl p-7 shadow-sm hover:shadow-md transition">
+                    <div aria-hidden="true" class="w-12 h-12 bg-purple-50 text-purple-600 rounded-xl flex items-center justify-center text-2xl mb-5">📊</div>
+                    <h3 class="text-lg font-bold mb-2">GPA &amp; Goal Tracker</h3>
+                    <p class="text-sm text-slate-600 leading-relaxed">Evaluate internal assessment weights and semester GPA projections in real-time.</p>
+                </article>
+                <article class="bg-white border border-slate-200 rounded-2xl p-7 shadow-sm hover:shadow-md transition">
+                    <div aria-hidden="true" class="w-12 h-12 bg-blue-50 text-blue-600 rounded-xl flex items-center justify-center text-2xl mb-5">📝</div>
+                    <h3 class="text-lg font-bold mb-2">Markdown Notes</h3>
+                    <p class="text-sm text-slate-600 leading-relaxed">Fast note taking with full code snippet highlighting, formula blocks, and PDF exports.</p>
+                </article>
+                <article class="bg-white border border-slate-200 rounded-2xl p-7 shadow-sm hover:shadow-md transition">
+                    <div aria-hidden="true" class="w-12 h-12 bg-rose-50 text-rose-600 rounded-xl flex items-center justify-center text-2xl mb-5">🎯</div>
+                    <h3 class="text-lg font-bold mb-2">Pomodoro Intervals</h3>
+                    <p class="text-sm text-slate-600 leading-relaxed">Integrated focused study sprints designed to maximize retention and prevent burnout.</p>
+                </article>
+                <article class="bg-white border border-slate-200 rounded-2xl p-7 shadow-sm hover:shadow-md transition">
+                    <div aria-hidden="true" class="w-12 h-12 bg-amber-50 text-amber-600 rounded-xl flex items-center justify-center text-2xl mb-5">👥</div>
+                    <h3 class="text-lg font-bold mb-2">Study Groups</h3>
+                    <p class="text-sm text-slate-600 leading-relaxed">Collaborate with peers, share reference summaries, and sync exam preparation checklists.</p>
+                </article>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- COMPONENT 8: Testimonial Block -->
-    <section class="py-16 max-w-4xl mx-auto px-6 text-center">
-        <div class="bg-gradient-to-tr from-indigo-50 to-purple-50 p-8 md:p-12 rounded-3xl border border-indigo-100">
-            <div class="text-amber-400 text-2xl mb-4">★★★★★</div>
-            <blockquote class="text-xl md:text-2xl font-medium text-slate-800 italic leading-snug mb-6">
-                "StudyHub completely removed the chaos of tracking assignments across multiple course portals. Our whole project group uses it daily."
-            </blockquote>
-            <p class="font-bold text-slate-900">Hamza Tariq</p>
-            <p class="text-xs text-slate-500 uppercase tracking-wider">CS Student, 3rd Semester</p>
-        </div>
-    </section>
+        <!-- COMPONENT 7: Academic Course Schedule Data Table -->
+        <section aria-labelledby="schedule-title" class="bg-white border-y border-slate-200 py-16">
+            <div class="max-w-6xl mx-auto px-6">
+                <h2 id="schedule-title" class="text-2xl font-bold mb-6 text-slate-900">Current Semester Sample Schedule</h2>
+                <div class="overflow-x-auto border border-slate-200 rounded-xl">
+                    <table class="w-full text-left text-sm text-slate-600">
+                        <caption class="sr-only">Sample list of enrolled courses with codes, credit hours and status</caption>
+                        <thead class="bg-slate-50 text-slate-700 font-semibold uppercase text-xs border-b border-slate-200">
+                            <tr>
+                                <th scope="col" class="px-6 py-4">Course Name</th>
+                                <th scope="col" class="px-6 py-4">Code</th>
+                                <th scope="col" class="px-6 py-4">Credit Hours</th>
+                                <th scope="col" class="px-6 py-4">Status</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-slate-200">
+                            <tr class="hover:bg-slate-50">
+                                <th scope="row" class="px-6 py-4 font-medium text-slate-900">Web Technologies</th>
+                                <td class="px-6 py-4 font-mono text-xs">CS-301</td>
+                                <td class="px-6 py-4">3 (2+1)</td>
+                                <td class="px-6 py-4"><span class="bg-green-100 text-green-700 px-2.5 py-1 rounded-full text-xs font-semibold">Enrolled</span></td>
+                            </tr>
+                            <tr class="hover:bg-slate-50">
+                                <th scope="row" class="px-6 py-4 font-medium text-slate-900">Theory of Automata</th>
+                                <td class="px-6 py-4 font-mono text-xs">CS-304</td>
+                                <td class="px-6 py-4">3 (3+0)</td>
+                                <td class="px-6 py-4"><span class="bg-green-100 text-green-700 px-2.5 py-1 rounded-full text-xs font-semibold">Enrolled</span></td>
+                            </tr>
+                            <tr class="hover:bg-slate-50">
+                                <th scope="row" class="px-6 py-4 font-medium text-slate-900">Advanced Database Systems</th>
+                                <td class="px-6 py-4 font-mono text-xs">CS-308</td>
+                                <td class="px-6 py-4">3 (2+1)</td>
+                                <td class="px-6 py-4"><span class="bg-indigo-100 text-indigo-700 px-2.5 py-1 rounded-full text-xs font-semibold">In Progress</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
 
-    <!-- COMPONENT 9: Call-To-Action Banner -->
-    <section class="bg-slate-900 text-white py-16">
-        <div class="max-w-5xl mx-auto px-6 text-center">
-            <h2 class="text-3xl md:text-4xl font-extrabold mb-4">Start organizing your courses today</h2>
-            <p class="text-slate-400 max-w-xl mx-auto mb-8 text-sm md:text-base">No setup fees, no complicated configurations. Just clean, student-centric academic productivity.</p>
-            <a href="src/pages/signup.html" class="inline-block bg-indigo-600 hover:bg-indigo-700 text-white font-semibold px-8 py-3.5 rounded-xl shadow-lg transition">Create Free Student Account</a>
-        </div>
-    </section>
+        <!-- COMPONENT 8: Testimonial Block -->
+        <section aria-label="Student testimonial" class="py-16 max-w-4xl mx-auto px-6 text-center">
+            <figure class="bg-gradient-to-tr from-indigo-50 to-purple-50 p-8 md:p-12 rounded-3xl border border-indigo-100">
+                <div aria-label="Rated 5 out of 5 stars" class="text-amber-400 text-2xl mb-4">★★★★★</div>
+                <blockquote class="text-xl md:text-2xl font-medium text-slate-800 italic leading-snug mb-6">
+                    <p>"StudyHub completely removed the chaos of tracking assignments across multiple course portals. Our whole project group uses it daily."</p>
+                </blockquote>
+                <figcaption>
+                    <p class="font-bold text-slate-900">Hamza Tariq</p>
+                    <p class="text-xs text-slate-500 uppercase tracking-wider">CS Student, 3rd Semester</p>
+                </figcaption>
+            </figure>
+        </section>
 
-    <!-- COMPONENT 10: Multi-Column Footer with Newsletter Sub & Copyright -->
+        <!-- COMPONENT 9: Call-To-Action Banner -->
+        <section aria-labelledby="cta-title" class="bg-slate-900 text-white py-16">
+            <div class="max-w-5xl mx-auto px-6 text-center">
+                <h2 id="cta-title" class="text-3xl md:text-4xl font-extrabold mb-4">Start organizing your courses today</h2>
+                <p class="text-slate-400 max-w-xl mx-auto mb-8 text-sm md:text-base">No setup fees, no complicated configurations. Just clean, student-centric academic productivity.</p>
+                <a href="src/pages/signup.html" class="inline-block bg-indigo-600 hover:bg-indigo-700 text-white font-semibold px-8 py-3.5 rounded-xl shadow-lg transition">Create Free Student Account</a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- COMPONENT 10: Multi-Column Footer -->
     <footer class="bg-white border-t border-slate-200 mt-auto">
         <div class="max-w-7xl mx-auto px-6 py-12">
             <div class="grid md:grid-cols-4 gap-8 mb-8">
@@ -198,25 +208,25 @@
                     <a href="index.html" class="text-2xl font-black text-indigo-600 tracking-tight">StudyHub</a>
                     <p class="text-sm text-slate-500 mt-2 max-w-sm">Dedicated academic workspace designed for computer science and engineering students.</p>
                 </div>
-                <div>
-                    <h4 class="text-xs font-bold uppercase tracking-wider text-slate-900 mb-3">Navigation</h4>
+                <nav aria-label="Footer navigation">
+                    <h2 class="text-xs font-bold uppercase tracking-wider text-slate-900 mb-3">Navigation</h2>
                     <ul class="space-y-2 text-sm text-slate-600">
                         <li><a href="index.html" class="hover:text-indigo-600">Home</a></li>
                         <li><a href="src/pages/about.html" class="hover:text-indigo-600">About Platform</a></li>
-                        <li><a href="src/pages/contact.html" class="hover:text-indigo-600">Contact & Support</a></li>
+                        <li><a href="src/pages/contact.html" class="hover:text-indigo-600">Contact &amp; Support</a></li>
                     </ul>
-                </div>
-                <div>
-                    <h4 class="text-xs font-bold uppercase tracking-wider text-slate-900 mb-3">Account</h4>
+                </nav>
+                <nav aria-label="Footer account links">
+                    <h2 class="text-xs font-bold uppercase tracking-wider text-slate-900 mb-3">Account</h2>
                     <ul class="space-y-2 text-sm text-slate-600">
                         <li><a href="src/pages/signin.html" class="hover:text-indigo-600">Student Sign In</a></li>
                         <li><a href="src/pages/signup.html" class="hover:text-indigo-600">Create Account</a></li>
                     </ul>
-                </div>
+                </nav>
             </div>
             <div class="border-t border-slate-200 pt-6 flex flex-col md:flex-row justify-between items-center text-xs text-slate-400">
-                <p>© 2026 StudyHub Platform. Built for Web Technologies Lab.</p>
-                <p>Designed with Semantic HTML5 & Tailwind CSS</p>
+                <p><small>© 2026 StudyHub Platform. Built for Web Technologies Lab.</small></p>
+                <p><small>Designed with Semantic HTML5 &amp; Tailwind CSS</small></p>
             </div>
         </div>
     </footer>
