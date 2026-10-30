@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StudyHub - Study Group Members</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E👥%3C/text%3E%3C/svg%3E">
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased flex flex-col min-h-screen">
+
+    <!-- Top banner -->
+    <aside class="bg-indigo-600 text-white text-xs py-2 px-4 text-center font-medium">
+        <span aria-hidden="true">👥</span> Member data is loaded live from a public API.
+    </aside>
+
+    <!-- Header with navbar -->
+    <header class="sticky top-0 z-50">
+        <nav aria-label="Main navigation" class="bg-white border-b border-slate-200">
+            <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+                <a href="../../index.html" class="flex items-center gap-2 text-2xl font-black text-indigo-600 tracking-tight">
+                    <span aria-hidden="true" class="p-2 bg-indigo-50 rounded-xl text-indigo-600 text-xl">📚</span>
+                    <span>StudyHub</span>
+                </a>
+                <ul class="hidden md:flex items-center gap-6 font-medium text-sm">
+                    <li><a href="../../index.html" class="text-slate-600 hover:text-indigo-600 transition">Home</a></li>
+                    <li><a href="about.html" class="text-slate-600 hover:text-indigo-600 transition">About</a></li>
+                    <li><a href="tasks.html" class="text-slate-600 hover:text-indigo-600 transition">Tasks</a></li>
+                    <li><a href="members.html" aria-current="page" class="text-indigo-600 font-semibold border-b-2 border-indigo-600 pb-1">Members</a></li>
+                    <li><a href="contact.html" class="text-slate-600 hover:text-indigo-600 transition">Contact</a></li>
+                    <li><a href="signin.html" class="text-slate-600 hover:text-indigo-600 transition">Sign In</a></li>
+                    <li><a href="signup.html" class="bg-indigo-600 text-white px-5 py-2.5 rounded-lg hover:bg-indigo-700 transition shadow-sm font-semibold">Sign Up</a></li>
+                </ul>
+                <button type="button" aria-label="Open menu" class="md:hidden p-2 text-slate-600">☰</button>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+
+        <!-- Breadcrumb -->
+        <nav aria-label="Breadcrumb" class="max-w-6xl mx-auto px-6 pt-6">
+            <ol class="inline-flex items-center space-x-2 text-xs text-slate-500">
+                <li><a href="../../index.html" class="hover:text-indigo-600">Home</a></li>
+                <li aria-hidden="true"><span>/</span></li>
+                <li aria-current="page" class="text-indigo-600 font-semibold">Members</li>
+            </ol>
+        </nav>
+
+        <!-- Page heading -->
+        <header class="max-w-6xl mx-auto px-6 py-10 text-center">
+            <span class="bg-indigo-100 text-indigo-700 text-xs font-bold px-3 py-1 rounded-full">Live API Data</span>
+            <h1 class="text-4xl md:text-5xl font-black text-slate-900 mt-3 mb-2">Study Group Members</h1>
+            <p class="text-slate-600 text-sm md:text-base max-w-xl mx-auto">This list is fetched live from a public API using Axios, not typed in by hand.</p>
+        </header>
+
+        <!-- Status message: loading and error states -->
+        <p id="status" role="status" class="max-w-6xl mx-auto px-6 text-sm text-slate-500 mb-4"></p>
+
+        <!-- Member cards filled in by members.js -->
+        <section id="members-grid" aria-label="Study group members" class="max-w-6xl mx-auto px-6 pb-20 grid sm:grid-cols-2 lg:grid-cols-3 gap-6"></section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t border-slate-200 mt-auto">
+        <div class="max-w-7xl mx-auto px-6 py-8 flex flex-col md:flex-row justify-between items-center text-xs text-slate-500 gap-4">
+            <p><small>&copy; 2026 StudyHub Platform. All rights reserved.</small></p>
+            <nav aria-label="Footer navigation">
+                <ul class="flex gap-6">
+                    <li><a href="../../index.html" class="hover:text-indigo-600">Home</a></li>
+                    <li><a href="about.html" class="hover:text-indigo-600">About</a></li>
+                    <li><a href="tasks.html" class="hover:text-indigo-600">Tasks</a></li>
+                    <li><a href="members.html" class="hover:text-indigo-600">Members</a></li>
+                    <li><a href="contact.html" class="hover:text-indigo-600">Contact</a></li>
+                    <li><a href="signin.html" class="hover:text-indigo-600">Sign In</a></li>
+                </ul>
+            </nav>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="../scripts/members.js"></script>
+    <script src="../scripts/nav.js"></script>
+</body>
+</html>
